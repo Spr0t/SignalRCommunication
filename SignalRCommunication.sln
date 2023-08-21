@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientWPF", "ClientWPF\ClientWPF.csproj", "{5DB6C331-8A9A-4B46-8DC4-53583AA6C13B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerSignalR", "ServerSignalR\ServerSignalR.csproj", "{4D846DD7-9C04-4467-91A5-A495B049AEAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5DB6C331-8A9A-4B46-8DC4-53583AA6C13B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DB6C331-8A9A-4B46-8DC4-53583AA6C13B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DB6C331-8A9A-4B46-8DC4-53583AA6C13B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DB6C331-8A9A-4B46-8DC4-53583AA6C13B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D846DD7-9C04-4467-91A5-A495B049AEAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D846DD7-9C04-4467-91A5-A495B049AEAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D846DD7-9C04-4467-91A5-A495B049AEAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D846DD7-9C04-4467-91A5-A495B049AEAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8144B6DC-0FF4-425A-B926-DDAD50FFB8D8}
+	EndGlobalSection
+EndGlobal

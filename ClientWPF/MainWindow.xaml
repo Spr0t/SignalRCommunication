@@ -1,0 +1,20 @@
+﻿<Window x:Class="ClientWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClientWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="500" ResizeMode="NoResize">
+    <Grid x:Name="ProcessMessage" Margin="40,46,50,10">
+
+        <TextBox Name="inputText" Text="Your message" Margin="1,1,151,277" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" Opacity="0.98"/>
+
+        <Button Name ="sendDataButton" Content="Send" Margin="214,1,37,277" Click="Button_Click" Background="#FFC99898" FontSize="20"/>
+        <TextBlock TextWrapping="Wrap" Text="Status:" Margin="1,84,294,84" RenderTransformOrigin="0.552,-0.35" FontSize="20"/>
+        <TextBlock Name ="statusField" TextWrapping="Wrap" Margin="105,84,85,85" Text="No status" FontSize="20"/>
+        <TextBlock Name ="responseBox" TextWrapping="Wrap" Text="No response" Margin="106,51,58,111" FontSize="20"/>
+        <TextBlock TextWrapping="Wrap" Text="Response:" Margin="1,51,275,111" FontSize="20"/>
+
+    </Grid>
+</Window>
