@@ -1,35 +1,41 @@
-﻿using System.Collections.Concurrent;
+﻿using Microsoft.Extensions.Logging;
+using ServerSignalR.Entities;
+using System.Collections.Concurrent;
 
 namespace ServerSignalR.Services;
 
 public interface IStorageService
 {
-    void AddMessage(string mess);
-    string? GetMessage();
+    void AddItem(string id, string mess);
+    Client? GetItem();
 }
 
 public class StorageService : IStorageService
 {
     private readonly ILogger<StorageService> _logger;
-    private ConcurrentQueue<string> QueueMessageStorage { get; set; } = new();
+    private ConcurrentQueue<Client> QueueMessageStorage { get; set; } = new();
 
     public StorageService(ILogger<StorageService> logger)
     {
         _logger = logger;
     }
 
-    public void AddMessage(string mess)
+    public void AddItem(string id, string mess)
     {
-        _logger.LogInformation(mess);
+        _logger.LogInformation(mess, id);
 
-        QueueMessageStorage.Enqueue(mess);
+        var item = new Client()
+        {
+            ConnectionId = id,
+            ClientMessage = mess
+        };
+
+        QueueMessageStorage.Enqueue(item);
     }
-    public string? GetMessage()
-    {
-        QueueMessageStorage.TryDequeue(out var result);
 
-        if (result != null)
-            _logger.LogInformation(result);
+    public Client? GetItem()
+    {
+        QueueMessageStorage.TryDequeue(out var result);;
 
         return result;
     }

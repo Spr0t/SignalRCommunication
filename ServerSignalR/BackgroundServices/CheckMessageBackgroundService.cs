@@ -27,15 +27,16 @@ public class CheckMessageBackgroundService : BackgroundService
 
         while (!stoppingToken.IsCancellationRequested)
         {
-            var message = _storageService.GetMessage();
+            var item = _storageService.GetItem();
+
+            var message = item?.ClientMessage;
 
             if (message == Constants.HubConstants.HubCheckMessageTarget)
             {
-                _logger.LogInformation(message);
-
                 message = Constants.HubConstants.HubCheckMessageResponse;
 
-                await _hubContext.Clients.All
+                if (item?.ConnectionId != null)
+                await _hubContext.Clients.Client(item.ConnectionId)
                     .SendAsync(Constants.HubConstants.HubRecieveMessageMethodName, message);
             }
         }

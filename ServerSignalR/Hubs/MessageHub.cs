@@ -22,7 +22,7 @@ public class MessageHub : Hub
         //Imitation server processing info delay
         Thread.Sleep(5000);
 
-        _storageService.AddMessage(message);
+        _storageService.AddItem(Context.ConnectionId, message);
 
         Clients.Caller.SendAsync(Constants.HubConstants.HubRecieveMessageMethodName, 
             Constants.HubConstants.HubRecieveStatusMessage);
